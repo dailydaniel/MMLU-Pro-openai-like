@@ -1,13 +1,20 @@
 # MMLU-Pro
 
+# Fork for evaluation models with openai-like
+### Instruction
+```bash
+pip install -r requirements_openai_like.txt
+python evaluate_from_custom_api.py -m Llama -h http://localhost:8000/v1
+```
+
 |[**🤗 Dataset**](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro) | [**🏆Leaderboard**](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro) | [**📖 Paper**](https://arxiv.org/abs/2406.01574) |
 
 This repo contains the evaluation code for the NeurIPS-24 paper "[MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark](https://arxiv.org/abs/2406.01574.pdf)"
 
 ## Introduction
-We introduce MMLU-Pro, an enhanced benchmark designed to evaluate language understanding models across broader and more challenging tasks. Building on the Massive Multitask Language Understanding (MMLU) dataset, MMLU-Pro integrates more challenging, reasoning-focused questions and increases the answer choices per question from four to ten, significantly raising the difficulty and reducing the chance of success through random guessing. MMLU-Pro comprises over 12,000 rigorously curated questions from academic exams and textbooks, spanning 14 diverse domains including Biology, Business, Chemistry, Computer Science, Economics, Engineering, Health, History, Law, Math, Philosophy, Physics, Psychology, and Others.  
+We introduce MMLU-Pro, an enhanced benchmark designed to evaluate language understanding models across broader and more challenging tasks. Building on the Massive Multitask Language Understanding (MMLU) dataset, MMLU-Pro integrates more challenging, reasoning-focused questions and increases the answer choices per question from four to ten, significantly raising the difficulty and reducing the chance of success through random guessing. MMLU-Pro comprises over 12,000 rigorously curated questions from academic exams and textbooks, spanning 14 diverse domains including Biology, Business, Chemistry, Computer Science, Economics, Engineering, Health, History, Law, Math, Philosophy, Physics, Psychology, and Others.
 
-Our experimental results show that MMLU-Pro not only raises the challenge, causing a significant drop in accuracy by 16% to 33% compared to MMLU but also demonstrates greater stability under varying prompts. With 24 different prompt styles tested, the sensitivity of model scores to prompt variations decreased from 4-5% in MMLU to just 2% in MMLU-Pro. Additionally, we found that models utilizing Chain of Thought (CoT) reasoning achieved better performance on MMLU-Pro compared to direct answering, which starkly contrasts the findings on the original MMLU, indicating that MMLU-Pro includes more complex reasoning questions. 
+Our experimental results show that MMLU-Pro not only raises the challenge, causing a significant drop in accuracy by 16% to 33% compared to MMLU but also demonstrates greater stability under varying prompts. With 24 different prompt styles tested, the sensitivity of model scores to prompt variations decreased from 4-5% in MMLU to just 2% in MMLU-Pro. Additionally, we found that models utilizing Chain of Thought (CoT) reasoning achieved better performance on MMLU-Pro compared to direct answering, which starkly contrasts the findings on the original MMLU, indicating that MMLU-Pro includes more complex reasoning questions.
 
 <img width="1432" alt="abs" src="https://github.com/TIGER-AI-Lab/MMLU-Pro/assets/20929360/8e369fc2-5b6b-4bab-8a44-9e222e742027">
 
@@ -33,13 +40,13 @@ cd scripts/examples/
 sh eval_gpt_4.sh
 ```
 ## 🏆 Mini-Leaderboard
-| Model                          | Overall Accuracy | 
+| Model                          | Overall Accuracy |
 |--------------------------------|:----------------:|
 | Claude-3.5-Sonnet              | 76.12            |
-| GPT-4o                         | 72.55            | 
+| GPT-4o                         | 72.55            |
 | Gemini-1.5-Pro                 | 69.03            |
 | Claude-3-Opus                  | 68.45            |
-| GPT-4-Turbo                    | 63.71            | 
+| GPT-4-Turbo                    | 63.71            |
 | Gemini-1.5-Flash               | 59.12            |
 | Yi-large                       | 57.53            |
 | Claude-3-Sonnet                | 56.80            |
@@ -73,7 +80,7 @@ Thanks to @chibop1 for evaluating the robustness of MMLU-Pro across all the diff
 **BibTeX:**
 ```bibtex
 @misc{wang2024mmlupro,
-      title={MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark}, 
+      title={MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark},
       author={Yubo Wang and Xueguang Ma and Ge Zhang and Yuansheng Ni and Abhranil Chandra and Shiguang Guo and Weiming Ren and Aaran Arulraj and Xuan He and Ziyan Jiang and Tianle Li and Max Ku and Kai Wang and Alex Zhuang and Rongqi Fan and Xiang Yue and Wenhu Chen},
       year={2024},
       eprint={2406.01574},
