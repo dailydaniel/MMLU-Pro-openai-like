@@ -1,11 +1,11 @@
-# MMLU-Pro
-
 # Fork for evaluation models with openai-like
 ### Instruction
 ```bash
 pip install -r requirements_openai_like.txt
-python evaluate_from_custom_api.py -m Llama -h http://localhost:8000/v1
+python evaluate_from_custom_api.py -m Llama -h http://localhost:8000/v1 -t 4000
 ```
+
+# MMLU-Pro
 
 |[**🤗 Dataset**](https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro) | [**🏆Leaderboard**](https://huggingface.co/spaces/TIGER-Lab/MMLU-Pro) | [**📖 Paper**](https://arxiv.org/abs/2406.01574) |
 

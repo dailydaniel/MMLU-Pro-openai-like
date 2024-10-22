@@ -27,7 +27,7 @@ def call_api(client, instruction, inputs):
         model=args.model_name,
         messages=message_text,
         temperature=0,
-        max_tokens=4000,
+        max_tokens=args.max_tokens,
         top_p=1,
         frequency_penalty=0,
         presence_penalty=0,
@@ -244,6 +244,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", "-m", type=str, default="Llama")
     parser.add_argument("--assigned_subjects", "-a", type=str, default="all")
     parser.add_argument("--host", "-h", type=str, default="http://localhost:8000/v1")
+    parser.add_argument("--max_tokens", "-t", type=int, default=4000)
 
     assigned_subjects = []
     args = parser.parse_args()
