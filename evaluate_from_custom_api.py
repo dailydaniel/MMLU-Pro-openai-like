@@ -11,11 +11,8 @@ import argparse
 import requests
 
 
-API_KEY = ""
-
-
 def get_client():
-    client = OpenAI(api_key="sk-trtrtr", base_url=args.host)
+    client = OpenAI(api_key=args.api_key, base_url=args.host)
 
     return client
 
@@ -245,6 +242,7 @@ if __name__ == "__main__":
     parser.add_argument("--assigned_subjects", "-a", type=str, default="all")
     parser.add_argument("--host", "-H", type=str, default="http://localhost:8000/v1")
     parser.add_argument("--max_tokens", "-t", type=int, default=4000)
+    parser.add_argument("--api_key", "-k", type=str, default="api_key")
 
     assigned_subjects = []
     args = parser.parse_args()
