@@ -243,7 +243,7 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", "-o", type=str, default="eval_results/")
     parser.add_argument("--model_name", "-m", type=str, default="Llama")
     parser.add_argument("--assigned_subjects", "-a", type=str, default="all")
-    parser.add_argument("--host", "-h", type=str, default="http://localhost:8000/v1")
+    parser.add_argument("--host", "-H", type=str, default="http://localhost:8000/v1")
     parser.add_argument("--max_tokens", "-t", type=int, default=4000)
 
     assigned_subjects = []
