@@ -81,8 +81,11 @@ def extract_answer(text):
     if match:
         return match.group(1)
     else:
-        print("1st answer extract failed\n" + text)
-        return extract_again(text)
+        try:
+            print("1st answer extract failed\n" + text)
+            return extract_again(text)
+        except:
+            return None
 
 
 def extract_again(text):
